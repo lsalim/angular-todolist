@@ -1,0 +1,12 @@
+<div *ngFor="let note of notes">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="checkbox" (change)="checked(note)" />
+      </div>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="note.description" />
+  </div>
+</div>
+
+

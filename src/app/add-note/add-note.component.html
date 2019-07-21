@@ -1,0 +1,11 @@
+<form>
+  <input #note class="form-control margin" placeholder="Take a note..."
+    (keyup.enter)="saveNote(note.value); note.value = ''" name="description" />
+</form>
+
+
+<style>
+    .margin {
+      margin-bottom: 30px;
+    }
+    </style>

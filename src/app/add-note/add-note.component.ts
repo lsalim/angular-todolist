@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Note } from './core/models/note';
+import { Component, OnInit, Input } from '@angular/core';
+import { Note } from '../core/models/note';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-add-note',
+  templateUrl: './add-note.component.html'
 })
-export class AppComponent {
+export class AddNoteComponent implements OnInit {
   notes: Note[];
-  // completed: Note[];
+
+  constructor() { }
 
   ngOnInit() {
-    this.notes = JSON.parse(sessionStorage.getItem("_notes"));
-    // this.completed = this.notes.filter((res) => res.done == true)
   }
 
   saveNote(note: string) {
@@ -31,4 +29,3 @@ export class AppComponent {
     sessionStorage.setItem("_notes", JSON.stringify(this.notes))
   }
 }
-
